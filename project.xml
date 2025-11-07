@@ -101,9 +101,11 @@
 	<!-- Comment this out to disable support for Nape integration (flixel.addons.nape) (reduces compile times) !-->
 	<define name="NAPE_ENABLED" unless="STRIPPED_COMPILE" />
 
-	<!-- Comment this out to disable video cutscene support, in case of compilation errors. !-->
 	<section if="cpp">
+	    <!-- Comment this out to disable video cutscene support, in case of compilation errors. !-->
 		<define name="VIDEO_CUTSCENES" if="desktop || android" />
+		<!-- Comment this out to disable connecting via SSH. -->
+		<define name="SSH_SUPPORT" if="desktop" />
 	</section>
 
 	<!-- Comment this out to disable commit number on FPS -->
@@ -136,6 +138,7 @@
 	<haxelib name="hscript-improved" />
 	<haxelib name="hxdiscord_rpc" if="DISCORD_RPC"/>
 	<haxelib name="markdown" />
+	<haxelib name="haxe-sshclient" if="SSH_SUPPORT" />
 	<haxelib name="hxcpp-debug-server" if="TEST_BUILD debug" />
 
 	<!-- _____________________________ Path Settings ____________________________ -->
